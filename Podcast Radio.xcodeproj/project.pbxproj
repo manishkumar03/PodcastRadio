@@ -1,0 +1,442 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9904FA281FAC0BF5006F932F /* ContainersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904FA271FAC0BF5006F932F /* ContainersVC.swift */; };
+		9904FA2A1FAC0DFB006F932F /* NowPlayingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9904FA291FAC0DFB006F932F /* NowPlayingVC.swift */; };
+		994A63D3201ACBD400CA8E42 /* ResizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 994A63D2201ACBD400CA8E42 /* ResizeImage.swift */; };
+		995C49E82019843A004523EB /* GlobalVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995C49E72019843A004523EB /* GlobalVariables.swift */; };
+		9980E0171F9BE29900751E14 /* AboutScreenVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9980E0161F9BE29900751E14 /* AboutScreenVC.swift */; };
+		99BDF9891F7212E000A280FB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99BDF9881F7212E000A280FB /* Reachability.swift */; };
+		99D086DA1F5CE382006FE2CF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D086D91F5CE382006FE2CF /* AppDelegate.swift */; };
+		99D086DC1F5CE382006FE2CF /* ChannelListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D086DB1F5CE382006FE2CF /* ChannelListVC.swift */; };
+		99D086DF1F5CE382006FE2CF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D086DD1F5CE382006FE2CF /* Main.storyboard */; };
+		99D086E11F5CE382006FE2CF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99D086E01F5CE382006FE2CF /* Assets.xcassets */; };
+		99D086E41F5CE382006FE2CF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99D086E21F5CE382006FE2CF /* LaunchScreen.storyboard */; };
+		99D086EC1F5CE54D006FE2CF /* ChannelListCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D086EB1F5CE54D006FE2CF /* ChannelListCellUI.swift */; };
+		99F8EAB41F64B02600D046C1 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99F8EAB31F64B02600D046C1 /* Images.xcassets */; };
+		99FBCB1F1F5DCC5D00F20310 /* PodcastChannelLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBCB1E1F5DCC5D00F20310 /* PodcastChannelLayout.swift */; };
+		99FBCB211F5DCF7E00F20310 /* getDefaultPodcastURLs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBCB201F5DCF7E00F20310 /* getDefaultPodcastURLs.swift */; };
+		99FBCB231F5DD08100F20310 /* PodcastsList.txt in Resources */ = {isa = PBXBuildFile; fileRef = 99FBCB221F5DD08100F20310 /* PodcastsList.txt */; };
+		99FBCB251F5DD13100F20310 /* parseRSSFeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBCB241F5DD13100F20310 /* parseRSSFeed.swift */; };
+		99FBCB2B1F5DF3E800F20310 /* EpisodeListCellUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBCB2A1F5DF3E800F20310 /* EpisodeListCellUI.swift */; };
+		99FBCB2D1F5DFC7900F20310 /* EpisodeDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBCB2C1F5DFC7900F20310 /* EpisodeDetailsVC.swift */; };
+		99FBCB361F62305F00F20310 /* PodcastEpisodeLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBCB351F62305F00F20310 /* PodcastEpisodeLayout.swift */; };
+		99FBCB381F6232CD00F20310 /* ChannelListVCTableFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBCB371F6232CD00F20310 /* ChannelListVCTableFunctions.swift */; };
+		99FBCB3A1F6233F900F20310 /* ChannelListVCHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBCB391F6233F900F20310 /* ChannelListVCHelper.swift */; };
+		99FBCB3C1F623D0700F20310 /* EpisodeListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBCB3B1F623D0700F20310 /* EpisodeListVC.swift */; };
+		99FBCB3E1F623D1900F20310 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99FBCB3D1F623D1900F20310 /* Constants.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9904FA271FAC0BF5006F932F /* ContainersVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainersVC.swift; sourceTree = "<group>"; };
+		9904FA291FAC0DFB006F932F /* NowPlayingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NowPlayingVC.swift; sourceTree = "<group>"; };
+		994A63D2201ACBD400CA8E42 /* ResizeImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResizeImage.swift; sourceTree = "<group>"; };
+		995C49E72019843A004523EB /* GlobalVariables.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalVariables.swift; sourceTree = "<group>"; };
+		9980E0161F9BE29900751E14 /* AboutScreenVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutScreenVC.swift; sourceTree = "<group>"; };
+		99BDF9881F7212E000A280FB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		99D086D61F5CE381006FE2CF /* Podcast Radio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Podcast Radio.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99D086D91F5CE382006FE2CF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		99D086DB1F5CE382006FE2CF /* ChannelListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChannelListVC.swift; sourceTree = "<group>"; };
+		99D086DE1F5CE382006FE2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		99D086E01F5CE382006FE2CF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		99D086E31F5CE382006FE2CF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		99D086E51F5CE382006FE2CF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		99D086EB1F5CE54D006FE2CF /* ChannelListCellUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListCellUI.swift; sourceTree = "<group>"; };
+		99F8EAB31F64B02600D046C1 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		99FBCB1E1F5DCC5D00F20310 /* PodcastChannelLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastChannelLayout.swift; sourceTree = "<group>"; };
+		99FBCB201F5DCF7E00F20310 /* getDefaultPodcastURLs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = getDefaultPodcastURLs.swift; sourceTree = "<group>"; };
+		99FBCB221F5DD08100F20310 /* PodcastsList.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = PodcastsList.txt; sourceTree = "<group>"; };
+		99FBCB241F5DD13100F20310 /* parseRSSFeed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = parseRSSFeed.swift; sourceTree = "<group>"; };
+		99FBCB2A1F5DF3E800F20310 /* EpisodeListCellUI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeListCellUI.swift; sourceTree = "<group>"; };
+		99FBCB2C1F5DFC7900F20310 /* EpisodeDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeDetailsVC.swift; sourceTree = "<group>"; };
+		99FBCB351F62305F00F20310 /* PodcastEpisodeLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastEpisodeLayout.swift; sourceTree = "<group>"; };
+		99FBCB371F6232CD00F20310 /* ChannelListVCTableFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListVCTableFunctions.swift; sourceTree = "<group>"; };
+		99FBCB391F6233F900F20310 /* ChannelListVCHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChannelListVCHelper.swift; sourceTree = "<group>"; };
+		99FBCB3B1F623D0700F20310 /* EpisodeListVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeListVC.swift; sourceTree = "<group>"; };
+		99FBCB3D1F623D1900F20310 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99D086D31F5CE381006FE2CF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		99D086CD1F5CE381006FE2CF = {
+			isa = PBXGroup;
+			children = (
+				99D086D81F5CE381006FE2CF /* Podcast Radio */,
+				99D086D71F5CE381006FE2CF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		99D086D71F5CE381006FE2CF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99D086D61F5CE381006FE2CF /* Podcast Radio.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99D086D81F5CE381006FE2CF /* Podcast Radio */ = {
+			isa = PBXGroup;
+			children = (
+				99D086D91F5CE382006FE2CF /* AppDelegate.swift */,
+				99D7331C1F64EF5F0038A2EE /* UI Layout for Table Cells */,
+				99FBCB321F5F92AC00F20310 /* View Controllers */,
+				99FBCB311F5F928F00F20310 /* File Layouts */,
+				99FBCB301F5E426500F20310 /* Functions */,
+				99D086DD1F5CE382006FE2CF /* Main.storyboard */,
+				99D086E01F5CE382006FE2CF /* Assets.xcassets */,
+				99D086E21F5CE382006FE2CF /* LaunchScreen.storyboard */,
+				99D086E51F5CE382006FE2CF /* Info.plist */,
+				99FBCB221F5DD08100F20310 /* PodcastsList.txt */,
+				99FBCB3D1F623D1900F20310 /* Constants.swift */,
+				99F8EAB31F64B02600D046C1 /* Images.xcassets */,
+			);
+			path = "Podcast Radio";
+			sourceTree = "<group>";
+		};
+		99D7331C1F64EF5F0038A2EE /* UI Layout for Table Cells */ = {
+			isa = PBXGroup;
+			children = (
+				99D086EB1F5CE54D006FE2CF /* ChannelListCellUI.swift */,
+				99FBCB2A1F5DF3E800F20310 /* EpisodeListCellUI.swift */,
+			);
+			name = "UI Layout for Table Cells";
+			sourceTree = "<group>";
+		};
+		99FBCB301F5E426500F20310 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				99FBCB241F5DD13100F20310 /* parseRSSFeed.swift */,
+				995C49E72019843A004523EB /* GlobalVariables.swift */,
+				99FBCB201F5DCF7E00F20310 /* getDefaultPodcastURLs.swift */,
+				994A63D2201ACBD400CA8E42 /* ResizeImage.swift */,
+				99BDF9881F7212E000A280FB /* Reachability.swift */,
+			);
+			name = Functions;
+			sourceTree = "<group>";
+		};
+		99FBCB311F5F928F00F20310 /* File Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				99FBCB1E1F5DCC5D00F20310 /* PodcastChannelLayout.swift */,
+				99FBCB351F62305F00F20310 /* PodcastEpisodeLayout.swift */,
+			);
+			name = "File Layouts";
+			sourceTree = "<group>";
+		};
+		99FBCB321F5F92AC00F20310 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9904FA271FAC0BF5006F932F /* ContainersVC.swift */,
+				9904FA291FAC0DFB006F932F /* NowPlayingVC.swift */,
+				99D086DB1F5CE382006FE2CF /* ChannelListVC.swift */,
+				99FBCB391F6233F900F20310 /* ChannelListVCHelper.swift */,
+				99FBCB371F6232CD00F20310 /* ChannelListVCTableFunctions.swift */,
+				99FBCB3B1F623D0700F20310 /* EpisodeListVC.swift */,
+				99FBCB2C1F5DFC7900F20310 /* EpisodeDetailsVC.swift */,
+				9980E0161F9BE29900751E14 /* AboutScreenVC.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		99D086D51F5CE381006FE2CF /* Podcast Radio */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99D086E81F5CE382006FE2CF /* Build configuration list for PBXNativeTarget "Podcast Radio" */;
+			buildPhases = (
+				99D086D21F5CE381006FE2CF /* Sources */,
+				99D086D31F5CE381006FE2CF /* Frameworks */,
+				99D086D41F5CE381006FE2CF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Podcast Radio";
+			productName = "Podcast Radio";
+			productReference = 99D086D61F5CE381006FE2CF /* Podcast Radio.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		99D086CE1F5CE381006FE2CF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Manish Kumar";
+				TargetAttributes = {
+					99D086D51F5CE381006FE2CF = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 9BPGVT33ND;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 99D086D11F5CE381006FE2CF /* Build configuration list for PBXProject "Podcast Radio" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 99D086CD1F5CE381006FE2CF;
+			productRefGroup = 99D086D71F5CE381006FE2CF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				99D086D51F5CE381006FE2CF /* Podcast Radio */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		99D086D41F5CE381006FE2CF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99D086E41F5CE382006FE2CF /* LaunchScreen.storyboard in Resources */,
+				99D086E11F5CE382006FE2CF /* Assets.xcassets in Resources */,
+				99F8EAB41F64B02600D046C1 /* Images.xcassets in Resources */,
+				99D086DF1F5CE382006FE2CF /* Main.storyboard in Resources */,
+				99FBCB231F5DD08100F20310 /* PodcastsList.txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		99D086D21F5CE381006FE2CF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				994A63D3201ACBD400CA8E42 /* ResizeImage.swift in Sources */,
+				99BDF9891F7212E000A280FB /* Reachability.swift in Sources */,
+				99D086DC1F5CE382006FE2CF /* ChannelListVC.swift in Sources */,
+				9904FA2A1FAC0DFB006F932F /* NowPlayingVC.swift in Sources */,
+				99D086DA1F5CE382006FE2CF /* AppDelegate.swift in Sources */,
+				9980E0171F9BE29900751E14 /* AboutScreenVC.swift in Sources */,
+				99FBCB2B1F5DF3E800F20310 /* EpisodeListCellUI.swift in Sources */,
+				995C49E82019843A004523EB /* GlobalVariables.swift in Sources */,
+				99D086EC1F5CE54D006FE2CF /* ChannelListCellUI.swift in Sources */,
+				99FBCB211F5DCF7E00F20310 /* getDefaultPodcastURLs.swift in Sources */,
+				99FBCB381F6232CD00F20310 /* ChannelListVCTableFunctions.swift in Sources */,
+				99FBCB2D1F5DFC7900F20310 /* EpisodeDetailsVC.swift in Sources */,
+				99FBCB3C1F623D0700F20310 /* EpisodeListVC.swift in Sources */,
+				99FBCB1F1F5DCC5D00F20310 /* PodcastChannelLayout.swift in Sources */,
+				99FBCB361F62305F00F20310 /* PodcastEpisodeLayout.swift in Sources */,
+				9904FA281FAC0BF5006F932F /* ContainersVC.swift in Sources */,
+				99FBCB3E1F623D1900F20310 /* Constants.swift in Sources */,
+				99FBCB251F5DD13100F20310 /* parseRSSFeed.swift in Sources */,
+				99FBCB3A1F6233F900F20310 /* ChannelListVCHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		99D086DD1F5CE382006FE2CF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99D086DE1F5CE382006FE2CF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		99D086E21F5CE382006FE2CF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99D086E31F5CE382006FE2CF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		99D086E61F5CE382006FE2CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		99D086E71F5CE382006FE2CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		99D086E91F5CE382006FE2CF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 9BPGVT33ND;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INFOPLIST_FILE = "Podcast Radio/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manishbansal.PodcastRadio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		99D086EA1F5CE382006FE2CF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 9BPGVT33ND;
+				INFOPLIST_FILE = "Podcast Radio/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.manishbansal.PodcastRadio;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		99D086D11F5CE381006FE2CF /* Build configuration list for PBXProject "Podcast Radio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99D086E61F5CE382006FE2CF /* Debug */,
+				99D086E71F5CE382006FE2CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99D086E81F5CE382006FE2CF /* Build configuration list for PBXNativeTarget "Podcast Radio" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99D086E91F5CE382006FE2CF /* Debug */,
+				99D086EA1F5CE382006FE2CF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 99D086CE1F5CE381006FE2CF /* Project object */;
+}

@@ -1,0 +1,7 @@
+http://feeds.gimletmedia.com/mogulshow
+http://feeds.harvest.org/ANB
+http://feeds.serialpodcast.org/serialpodcast?format=xml
+http://feeds.stownpodcast.org/stownpodcast
+http://www.mtjc.fm/feed/podcast/
+https://www.relay.fm/radar/feed
+http://feeds.gimletmedia.com/thenodshow
