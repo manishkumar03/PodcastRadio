@@ -1,2 +1,2 @@
-# MyApps
-iOS apps created by Manish Kumar.
+# Podcast Radio
+A streaming-only player for iOS (created by Manish Kumar)
