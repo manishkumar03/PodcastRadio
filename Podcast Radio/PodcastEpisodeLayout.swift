@@ -6,7 +6,9 @@
 //  Copyright © 2017 Manish Bansal. All rights reserved.
 //
 
-import  UIKit
+import UIKit
+import Foundation
+import AVFoundation
 
 class PodcastEpisodeLayout: NSObject, NSCoding {
     // prefix pel stands for Podcast Episode Layout
@@ -16,6 +18,7 @@ class PodcastEpisodeLayout: NSObject, NSCoding {
     var pelEpisodeSummary: String
     var pelEpisodeDuration: String
     var pelEpisodePublishDate: Date
+    var pelEpisodeLastPaused: Double
     
     required init(coder aDecoder: NSCoder) {
         self.pelEpisodeName = aDecoder.decodeObject(forKey: "pelEpisodeName") as! String
@@ -24,6 +27,7 @@ class PodcastEpisodeLayout: NSObject, NSCoding {
         self.pelEpisodeSummary = aDecoder.decodeObject(forKey: "pelEpisodeSummary") as! String
         self.pelEpisodeDuration = aDecoder.decodeObject(forKey: "pelEpisodeDuration") as! String
         self.pelEpisodePublishDate = aDecoder.decodeObject(forKey: "pelEpisodePublishDate") as! Date
+        self.pelEpisodeLastPaused = aDecoder.decodeDouble(forKey: "pelEpisodeLastPaused") //as! Double
         super.init()
     }
     
@@ -35,6 +39,7 @@ class PodcastEpisodeLayout: NSObject, NSCoding {
         aCoder.encode(pelEpisodeSummary, forKey: "pelEpisodeSummary")
         aCoder.encode(pelEpisodeDuration, forKey:"pelEpisodeDuration")
         aCoder.encode(pelEpisodePublishDate, forKey: "pelEpisodePublishDate")
+        aCoder.encode(pelEpisodeLastPaused, forKey: "pelEpisodeLastPaused")
     }
     
     override init() {
@@ -45,6 +50,7 @@ class PodcastEpisodeLayout: NSObject, NSCoding {
         self.pelEpisodeSummary = ""
         self.pelEpisodeDuration = ""
         self.pelEpisodePublishDate = Date()
+        self.pelEpisodeLastPaused = 0.0
         super.init()
         
     }

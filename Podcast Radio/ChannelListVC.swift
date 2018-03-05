@@ -10,7 +10,7 @@ import UIKit
 import Foundation
 import AVFoundation
 
-/// Parsed RSS feeds for the podcasts. This is what gets stored in the user defaults.
+/// Parsed RSS feeds for the podcasts. This is what gets stored in documents directory.
 var parsedPodcastChannels = [PodcastChannelLayout]()
 
 /// The list of podcasts URLs to which the user has subscribed
@@ -29,11 +29,9 @@ var player: AVPlayer?
 let pullToRefresh = UIRefreshControl()
 
 class ChannelListVC: UITableViewController {
-    //let storageDefault = UserDefaults.standard
     
     override func viewDidLoad()
     {
-        //print("viewDidLoad called")
         super.viewDidLoad()
         setupChannelListTableView()
         connectedToInternet = checkInternetConnection()
@@ -48,20 +46,16 @@ class ChannelListVC: UITableViewController {
                 processDefaultURLs()
                 let endDate = Date()
                 let timeInterval = endDate.timeIntervalSince(startDate)
-                print("Default URL seconds:  \(timeInterval)")
+                print("Time taken to process default URL in seconds:  \(timeInterval)")
             }
         }
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        //print("viewDidAppear")
         if subscribedYet == false {
-            showMessageNoPodcastsFound()
+            let ac = showMessageNoPodcastsFound()
+            self.present(ac, animated: true, completion: nil)
         }
-        
-//        if connectedToInternet == false {
-//            showErrorAlertInternetConection()
-//        }
     }
 
 

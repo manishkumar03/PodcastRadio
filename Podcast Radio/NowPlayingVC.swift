@@ -21,6 +21,9 @@ import AVFoundation
     var currentlyPlayingURL = URL(string: "dummyString")
     var enclosureURL = URL(string: "dummyString")
     let episodeName:String = ""
+    var channelIndexPathRow: Int = -1
+    var episodeIndexPathRow: Int = -1
+    var episodeLastPaused: Double = 0.0
     
     let padding: CGFloat = 10.0
 
@@ -31,8 +34,8 @@ import AVFoundation
         let notification = NSNotification.Name(rawValue: "player")
         notificationCenter.addObserver(self, selector: #selector(updatePlayer), name: notification, object: nil)
         
-        let viewHeight = UIScreen.main.bounds.height
-        let viewWidth = UIScreen.main.bounds.width
+//        let viewHeight = UIScreen.main.bounds.height
+//        let viewWidth = UIScreen.main.bounds.width
         self.view.backgroundColor = UIColor(red: 0.6, green: 0.7882, blue: 0.4314, alpha: 0.4)
         
         /*---whiteRoundedView---
@@ -45,9 +48,7 @@ import AVFoundation
         let top01 = NSLayoutConstraint(item: whiteRoundedView, attribute: .top, relatedBy: .equal, toItem: view, attribute: .topMargin, multiplier: 1, constant: padding)
         
         let height01 = NSLayoutConstraint(item: whiteRoundedView, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 80)
-        
-        //let width01 = NSLayoutConstraint(item: whiteRoundedView, attribute: .width, relatedBy: .equal, toItem: view, attribute: .width, multiplier: 1, constant: viewWidth - 2*padding)
-        
+
         let trailing01 = NSLayoutConstraint(item: whiteRoundedView, attribute: .trailing, relatedBy: .equal, toItem: view, attribute: .trailing, multiplier: 1, constant: -1*padding)
         
         self.view.addConstraints([leading01, top01, height01, trailing01])
@@ -157,11 +158,21 @@ import AVFoundation
 
         if let playerSafe = player {
             if playerSafe.rate == 0 {
+                // Seek to the last paused position
+                let jumpToSeconds = episodeLastPaused
+                let newTime: CMTime = CMTimeMake(Int64(jumpToSeconds), 1)
+                playerSafe.seek(to: newTime)
                 playerSafe.play()
                 playPauseButton.setBackgroundImage(UIImage(named: "pause.png"), for: .normal)
             } else {
                 playerSafe.pause()
                 playPauseButton.setBackgroundImage(UIImage(named: "play.png"), for: .normal)
+                
+                parsedPodcastChannels[channelIndexPathRow].pclEpisodes[episodeIndexPathRow].pelEpisodeLastPaused = playerCurrentTime
+                episodeLastPaused = playerCurrentTime
+                print("Current time:", playerCurrentTime)
+                didDataChange = true
+                savePodcastData()
             }
         }
         
@@ -215,6 +226,8 @@ import AVFoundation
         }
         
         let episodeName = notification.userInfo!["episodeName"] as! String
+        channelIndexPathRow = notification.userInfo!["channelIndexPathRow"] as! Int
+        episodeIndexPathRow = notification.userInfo!["episodeIndexPathRow"] as! Int
         episodeNameLabel.text = episodeName
         playPauseButton.setNeedsLayout()
     }

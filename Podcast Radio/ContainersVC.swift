@@ -16,7 +16,7 @@ class ContainersVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        /// Top container will contain the table view for podcasts.
         topContainer.translatesAutoresizingMaskIntoConstraints = false
         
         let leading01 = NSLayoutConstraint(item: topContainer, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0)
@@ -28,7 +28,7 @@ class ContainersVC: UIViewController {
         let bottom01 = NSLayoutConstraint(item: topContainer, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: -100)
         self.view.addConstraints([leading01, top01, trailing01, bottom01])
         
-        ///////////////////////////////------------------------------------///////////////////////
+        /// Bottom container will contain the 'Now playing' controls.
         bottomContainer.translatesAutoresizingMaskIntoConstraints = false
         
         let leading02 = NSLayoutConstraint(item: bottomContainer, attribute: .leading, relatedBy: .equal, toItem: view, attribute: .leading, multiplier: 1, constant: 0)

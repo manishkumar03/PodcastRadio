@@ -50,58 +50,6 @@ extension ChannelListVC {
     }
 }
 
-extension ChannelListVC {
-    
-    /**
-     Retrieve the parsed podcast feeds, if any, from the user defaults storage. If found, reload the tableview with them.
-     - Parameter None
-     - Returns: None
-     - Note: This function gets called from viewDidLoad method.
-     */
-    func getStoredChannelData() {
-        let startDate = Date()
-        
-        if let storedPodcastData = NSKeyedUnarchiver.unarchiveObject(withFile: GlobalVariables.channelPath)
-        {
-            let storedPodcastChannels = storedPodcastData as! [PodcastChannelLayout]
-            if storedPodcastChannels.count > 0
-            {
-                parsedPodcastChannels = storedPodcastChannels
-                print("Stored podcast found  \(parsedPodcastChannels.count)")
-                
-//                for channel in parsedPodcastChannels
-//                {
-//                    channel.printPodcast()
-//                }
-            }
-        }
-        
-        
-        let endDate = Date()
-        let timeInterval = endDate.timeIntervalSince(startDate)
-        print("Load stored podcasts seconds:  \(timeInterval)")
-    }
-}
-
-
-extension ChannelListVC {
-    
-    /**
-     Retrieve the list of podcasts to which the user has subscribed. This list is used to refresh the feed and fetch latest episodes.
-     - Parameter None
-     - Returns: None
-     */
-    func getStoredURLList() {
-        
-        if let storedUrlData = NSKeyedUnarchiver.unarchiveObject(withFile: GlobalVariables.urlPath) {
-            let storedUrlPodcasts = storedUrlData as! [String]
-            if storedUrlPodcasts.count > 0 {
-                urlPodcasts = storedUrlPodcasts
-                print("Stored URLs found \(urlPodcasts)")
-            }
-        }
-    }
-}
 
 extension ChannelListVC {
     
@@ -187,11 +135,13 @@ extension ChannelListVC {
 
             } else
             {
-                showErrorAlertInvalidURL()
+                let ac = showErrorAlertInvalidURL()
+                self.present(ac, animated: true, completion: nil)
             }
         } else
         {
-            showErrorAlertInvalidURL()
+            let ac = showErrorAlertInvalidURL()
+            self.present(ac, animated: true, completion: nil)
         }
 
     }
@@ -211,8 +161,10 @@ extension ChannelListVC {
         var tempParsedPodcastChannels: [PodcastChannelLayout] = []
         
         guard urlPodcasts.count > 0 else {
-            showMessageNoSubscriptions()
-            return}
+            let ac = showMessageNoSubscriptions()
+            self.present(ac, animated: true, completion: nil)
+            return
+        }
         
         // Fetch and parse the XMLs
         DispatchQueue.global(qos: .userInteractive).async
@@ -248,7 +200,8 @@ extension ChannelListVC {
             {
                 DispatchQueue.main.async
                 {
-                    self.showErrorAlertInternetConection()
+                    let ac = showErrorAlertInternetConection()
+                    self.present(ac, animated: true, completion: nil)
                 }
                 
             }
@@ -267,80 +220,3 @@ extension ChannelListVC {
         navigationController?.pushViewController(vc, animated: true)        
     }
 }
-
-extension ChannelListVC {
-    
-    func showErrorAlertInvalidURL() {
-        let ac = UIAlertController(title: "Not a valid URL", message: "Please enter a valid podcast URL.", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        ac.addAction(okAction)
-        present(ac, animated: true, completion: nil)
-    }
-    
-    func isValidUrl(_ inputUrl: String) -> Bool
-    {
-        if let testUrl = URL(string: inputUrl)
-        {
-            if UIApplication.shared.canOpenURL(testUrl)
-            {
-                return true
-            } else {
-                showErrorAlertInvalidURL()
-                return false
-            }
-            
-        } else
-        {
-            showErrorAlertInvalidURL()
-            return false
-        }
-    }
-    
-    /**
-     Check if the phone has internet connection. It works for both Wi-fi and cellular connections.
-     - Parameter None
-     - Returns: None
-     */
-    func checkInternetConnection() -> Bool
-    {
-        return Reachability.isConnectedToNetwork()
-
-    }
-    
-    func showErrorAlertInternetConection() {
-        let ac = UIAlertController(title: "Not connected to Internet", message: "Some features of the app may not work correctly", preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        ac.addAction(okAction)
-        present(ac, animated: true, completion: nil)
-    }
-    
-    func showMessageNoPodcastsFound() {
-        let ac = UIAlertController(title: "No podcast subscriptions found",
-                                   message: "Please use the '+' button to add a podcast",
-                                   preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        ac.addAction(okAction)
-        present(ac, animated: true, completion: nil)        
-    }
-    
-    func showMessageNoSubscriptions() {
-        let ac = UIAlertController(title: "No podcast subscriptions found",
-                                   message: "Please subscribe to at least one podcast",
-                                   preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        ac.addAction(okAction)
-        present(ac, animated: true, completion: nil)
-    }
-    
-    
-    func showMessageDefaultPodcastsLoaded() {
-        let ac = UIAlertController(title: "No podcast subscriptions found",
-                                   message: "A set of default podcasts has been loaded",
-                                   preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-        ac.addAction(okAction)
-        present(ac, animated: true, completion: nil)
-    }
-    
-}
-

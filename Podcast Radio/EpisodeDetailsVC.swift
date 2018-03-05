@@ -13,6 +13,10 @@ import AVFoundation
     var episodeEnclosure: String!
     var episodeShownotes: String!
     var episodeName: String!
+    var channelIndexPathRow: Int = -1
+    var episodeIndexPathRow: Int = -1
+    var episodeLastPaused: Double = 0.0
+    
     let padding: CGFloat = 10.0
     
     var playerCurrentTime = 0.0
@@ -188,15 +192,26 @@ import AVFoundation
         }
         
         if player?.rate == 0 {
+            // Seek to the last paused position
+            let jumpToSeconds = episodeLastPaused
+            let newTime: CMTime = CMTimeMake(Int64(jumpToSeconds), 1)
+            player!.seek(to: newTime)
             player!.play()
             playPauseButton.setBackgroundImage(UIImage(named: "pause.png"), for: .normal)
         } else {
             player!.pause()
             playPauseButton.setBackgroundImage(UIImage(named: "play.png"), for: .normal)
+            
+            parsedPodcastChannels[channelIndexPathRow].pclEpisodes[episodeIndexPathRow].pelEpisodeLastPaused = playerCurrentTime
+            episodeLastPaused = playerCurrentTime
+            print("Current time:", playerCurrentTime)
+            didDataChange = true
         }
         
-        let episodeInfo = ["episodeName": episodeName] as [AnyHashable : Any]
-        notificationCenter.post(name: notification, object: nil, userInfo: episodeInfo)
+        let episodeInfo = ["episodeName": episodeName,
+                           "channelIndexPathRow": channelIndexPathRow,
+                           "episodeIndexPathRow": episodeIndexPathRow] as [AnyHashable : Any]
+        notificationCenter.post(name: notification, object: nil, userInfo: episodeInfo)        
     }
     
     @IBAction func forwardButtonPressed(_ sender: UIButton) {
@@ -239,4 +254,12 @@ import AVFoundation
         webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('body')[0].style.fontFamily =\"Avenir-Book\"")
         webView.stringByEvaluatingJavaScript(from: "document.getElementsByTagName('body')[0].style.fontSize =\"13.0\"")
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        if didDataChange == true {
+            savePodcastData()
+        }
+    }
 }
+
+

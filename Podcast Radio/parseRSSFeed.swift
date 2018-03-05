@@ -29,6 +29,7 @@ class ParseRSSFeed: NSObject, XMLParserDelegate {
     var episodeSummary = String()
     var episodeDuration = String()
     var episodePublishDate = String()
+    var episodeLastPaused: Double = 0.0
     
     let dateFormatter = DateFormatter()
     
@@ -49,6 +50,7 @@ class ParseRSSFeed: NSObject, XMLParserDelegate {
             episodeSummary = ""
             episodeDuration = ""
             episodePublishDate = ""
+            episodeLastPaused = 0.0
             episode = PodcastEpisodeLayout()
             
         case "enclosure":
@@ -110,6 +112,9 @@ class ParseRSSFeed: NSObject, XMLParserDelegate {
             
             episodePublishDate = episodePublishDate.trimmingCharacters(in: Constants.spaceSet)
             episode.pelEpisodePublishDate = dateFormatter.date(from: episodePublishDate)!
+            
+            episodeLastPaused = 0.0
+            episode.pelEpisodeLastPaused = episodeLastPaused
             
             podcast.pclEpisodes.append(episode)
         }

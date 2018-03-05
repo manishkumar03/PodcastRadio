@@ -44,22 +44,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
         if didDataChange == true {
-            
-            let startDate = Date()
-            
-            // Store to the documents directory
-            let areChannelsSaved = NSKeyedArchiver.archiveRootObject(parsedPodcastChannels, toFile: GlobalVariables.channelPath)
-            print("Are channels saved?:", areChannelsSaved)
-            
-            let areURLsSaved = NSKeyedArchiver.archiveRootObject(urlPodcasts, toFile: GlobalVariables.urlPath)
-            print("Are channels saved?:", areURLsSaved)
-            
-            didDataChange = false
-            
-            let endDate = Date()
-            let timeInterval = endDate.timeIntervalSince(startDate)
-            print("Saved data in seconds:  \(timeInterval)")
-            
+            savePodcastData()            
         }
 
     }

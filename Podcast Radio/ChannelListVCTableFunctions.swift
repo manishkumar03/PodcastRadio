@@ -42,6 +42,7 @@ extension ChannelListVC {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         if let episodeListVC = storyboard?.instantiateViewController(withIdentifier: "episodeListVC") as? EpisodeListVC {
             episodeListVC.channel = parsedPodcastChannels[indexPath.row]
+            episodeListVC.channelIndexPathRow = indexPath.row
             navigationController?.pushViewController(episodeListVC, animated: true)
         }
     }

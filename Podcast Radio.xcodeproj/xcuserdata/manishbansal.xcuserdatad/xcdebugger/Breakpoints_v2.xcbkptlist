@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast Radio/parseRSSFeed.swift"
-            timestampString = "538628263.884798"
+            timestampString = "541918370.885358"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
+            startingLineNumber = "124"
+            endingLineNumber = "124"
             landmarkName = "parser(_:foundCharacters:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast Radio/parseRSSFeed.swift"
-            timestampString = "538628263.8854721"
+            timestampString = "541918370.885685"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "parser(_:foundCharacters:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast Radio/parseRSSFeed.swift"
-            timestampString = "538628263.885923"
+            timestampString = "541918370.8857549"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "126"
+            endingLineNumber = "126"
             landmarkName = "parser(_:foundCharacters:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast Radio/parseRSSFeed.swift"
-            timestampString = "538628263.886381"
+            timestampString = "541918370.88582"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "parser(_:didEndElement:namespaceURI:qualifiedName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,7 +74,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast Radio/ChannelListVCTableFunctions.swift"
-            timestampString = "538633642.536786"
+            timestampString = "541918370.885884"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "27"
@@ -90,7 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast Radio/ChannelListVCTableFunctions.swift"
-            timestampString = "538633642.536864"
+            timestampString = "541918370.886102"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
@@ -106,11 +106,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast Radio/parseRSSFeed.swift"
-            timestampString = "538628263.886958"
+            timestampString = "541918370.886166"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "192"
-            endingLineNumber = "192"
+            startingLineNumber = "197"
+            endingLineNumber = "197"
             landmarkName = "downloadArtworkImage(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast Radio/parseRSSFeed.swift"
-            timestampString = "538628263.887307"
+            timestampString = "541918370.8862261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
             landmarkName = "parser(_:didEndElement:namespaceURI:qualifiedName:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -138,27 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Podcast Radio/ChannelListVCTableFunctions.swift"
-            timestampString = "538633642.536966"
+            timestampString = "541918370.886286"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "33"
             endingLineNumber = "33"
-            landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Podcast Radio/EpisodeListVC.swift"
-            timestampString = "538628263.887724"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>

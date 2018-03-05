@@ -10,6 +10,7 @@ import UIKit
 
 class EpisodeListVC: UITableViewController {
     var channel: PodcastChannelLayout = PodcastChannelLayout()
+    var channelIndexPathRow: Int = -1
     let dateFormatter = DateFormatter()
     var imageLogo = UIImage()
 
@@ -51,10 +52,6 @@ class EpisodeListVC: UITableViewController {
         let publishDate = channel.pclEpisodes[indexPath.row].pelEpisodePublishDate
         cell.episodeCellPublishDateLabel?.text = dateFormatter.string(from: publishDate)
         
-        //let imageFileURL = channel.pclChannelArtworkImage
-        //let imageFilePath = imageFileURL.path
-        //cell.episodeCellImageView.image = UIImage(contentsOfFile: imageFilePath)
-        
         cell.episodeCellImageView.image = imageLogo
         
         return cell
@@ -65,29 +62,11 @@ class EpisodeListVC: UITableViewController {
             episodeDetailsVC.episodeEnclosure = channel.pclEpisodes[indexPath.row].pelEpisodeEnclosure
             episodeDetailsVC.episodeShownotes = channel.pclEpisodes[indexPath.row].pelEpisodeShownotes
             episodeDetailsVC.episodeName = channel.pclEpisodes[indexPath.row].pelEpisodeName
-            navigationController?.pushViewController(episodeDetailsVC, animated: true)
-            
+            episodeDetailsVC.channelIndexPathRow = channelIndexPathRow
+            episodeDetailsVC.episodeIndexPathRow = indexPath.row
+            episodeDetailsVC.episodeLastPaused = channel.pclEpisodes[indexPath.row].pelEpisodeLastPaused
+            navigationController?.pushViewController(episodeDetailsVC, animated: true)            
         }
     }
-    
-    
-    /**
-     Some podcasts have the duration in seconds (e.g. - 1772). This function will convert such values to
-     standard HH:mm:ss format.
-     - Parameter duration: Episode duration in seconds
-     - Returns: Episode duration in HH:mm:ss format.
-     */
-    func formatDurationValue(_ duration: String) -> String {
-        var outputString = ""
-        if let intDuration = Int(duration) {
-            let formatter = DateComponentsFormatter()
-            formatter.allowedUnits = [.hour, .minute, .second]
-            formatter.unitsStyle = .positional
-            outputString = formatter.string(from: TimeInterval(intDuration))!
-        } else {
-            outputString = duration
-        }
-        return outputString
-        
-    }
+
 }
