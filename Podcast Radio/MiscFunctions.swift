@@ -88,24 +88,7 @@ func isValidUrl(_ inputUrl: String) -> Bool
 
 
 
-/**
- Some podcasts have the duration in seconds (e.g. - 1772). This function will convert such values to
- standard HH:mm:ss format.
- - Parameter duration: Episode duration in seconds
- - Returns: Episode duration in HH:mm:ss format.
- */
-func formatDurationValue(_ duration: String) -> String {
-    var outputString = ""
-    if let intDuration = Int(duration) {
-        let formatter = DateComponentsFormatter()
-        formatter.allowedUnits = [.hour, .minute, .second]
-        formatter.unitsStyle = .positional
-        outputString = formatter.string(from: TimeInterval(intDuration))!
-    } else {
-        outputString = duration
-    }
-    return outputString    
-}
+
 
 
 

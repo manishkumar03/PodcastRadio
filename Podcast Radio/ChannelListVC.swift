@@ -30,9 +30,13 @@ let pullToRefresh = UIRefreshControl()
 
 class ChannelListVC: UITableViewController {
     
+    /// Channel view model to provide data to the Channel tableview
+    let channelViewModel = ChannelViewModel()
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        
         setupChannelListTableView()
         connectedToInternet = checkInternetConnection()
         

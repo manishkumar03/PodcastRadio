@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 func savePodcastData() {
         
@@ -24,4 +25,9 @@ func savePodcastData() {
         let endDate = Date()
         let timeInterval = endDate.timeIntervalSince(startDate)
         print("Saved data in seconds:  \(timeInterval)")
+}
+
+func deletePodcastChannel(_ indexPath: IndexPath) {
+    parsedPodcastChannels.remove(at: indexPath.row)
+    urlPodcasts.remove(at: indexPath.row)
 }
